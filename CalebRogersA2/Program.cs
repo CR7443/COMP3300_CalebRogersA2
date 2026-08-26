@@ -1,9 +1,12 @@
-﻿namespace CalebRogersA2;
+﻿using CalebRogersA2.Driver;
+
+namespace CalebRogersA2;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Application application = new Application();
+        application.Run();
     }
 }
