@@ -47,4 +47,9 @@ public class Attempt
 
     public string PlayerName => FirstName + " " + LastName;
     public bool IsTimeBelowRecord => Time.HasValue && Time.Value < 27.5m;
+
+    public override string ToString()
+    {
+        return $"{PlayerName} with a score of {Score} and a time of {Time} on {RunDate?.ToShortDateString()}.";
+    }
 }
