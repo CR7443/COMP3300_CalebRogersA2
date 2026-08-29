@@ -62,6 +62,14 @@ class Program
             Console.WriteLine(
                 $"{attempt.PlayerName.PadRight(playerNameWidth)} ({score.PadLeft(scoreWidth)}) : {attempt.Time}");
         }
+
+        Console.WriteLine("Stats:");
+        Console.WriteLine($"Min: {_level.GetMinimumScore()}");
+        Console.WriteLine($"Max: {_level.GetMaximumScore()}");
+        Console.WriteLine($"Ave: {_level.GetAverageTime():F2}");
+        Console.WriteLine($"Range: {_level.GetTimeRange()}");
+        Console.WriteLine(
+            $"Scores between 1500 and 2000, inclusive: {_level.GetScoreCountBetween(1500, 2000)}");
     }
 
     private static int ReadAttemptCount()
