@@ -1,11 +1,18 @@
 ﻿using CalebRogersA2.Model;
+using AppDriver = CalebRogersA2.Driver.Driver;
 
 namespace CalebRogersA2;
 
+/// <summary>
+/// Handles level setup, attempt input, and display of level statistics.
+/// </summary>
 class Program
 {
     private readonly Level _level;
 
+    /// <summary>
+    /// Initializes a new Program object with an empty Level.
+    /// </summary>
     public Program()
     {
         _level = new Level();
@@ -13,10 +20,13 @@ class Program
 
     static void Main(string[] args)
     {
-        Program program = new Program();
-        program.Run();
+        AppDriver driver = new AppDriver();
+        driver.Run();
     }
 
+    /// <summary>
+    /// Runs the level attempt input and displays the resulting level information and statistics.
+    /// </summary>
     public void Run()
     {
         FillLevelAttempts();
@@ -59,6 +69,7 @@ class Program
         foreach (Attempt attempt in _level.RunAttempts)
         {
             string score = attempt.Score?.ToString() ?? string.Empty;
+
             Console.WriteLine(
                 $"{attempt.PlayerName.PadRight(playerNameWidth)} ({score.PadLeft(scoreWidth)}) : {attempt.Time}");
         }

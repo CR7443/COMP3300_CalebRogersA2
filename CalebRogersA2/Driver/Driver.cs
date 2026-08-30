@@ -1,6 +1,6 @@
 namespace CalebRogersA2.Driver;
 
-public class Application
+public class Driver
 {
     public void Run()
     {
